@@ -16,16 +16,18 @@
 
 % if igra.tabela[i][j].odkrito:
 
-% if igra.tabela[i][j].stevilka == 0 and not igra.tabela[i][j].mina:
-<th><center><button class="btn btn-success" style='background-color: #c1e0c9; margin: 0px 0px; width:37px; height:37px;' disabled></button></center></th>
-% elif igra.tabela[i][j].mina and igra.tabela[i][j].odkrito:
-<th><button class="btn btn-success" style='background-color: #024f2e;margin: 0px 0px; width:37px; height:37px;'></button></th>
-% else:
-<th><button class="btn btn-success" style='background-color: #c1e0c9; color: #000000; margin: 0px 0px; width:37px; height:37px;' disabled>{{igra.tabela[i][j].stevilka}}</button></th>
-% end
+    % if igra.tabela[i][j].stevilka == 0 and not igra.tabela[i][j].mina:
+        <th><center><button class="btn btn-success" style='background-color: #c1e0c9; margin: 0px 0px; width:37px; height:37px;' disabled></button></center></th>
+    % elif igra.tabela[i][j].mina and igra.zmaga():
+        <th><button class="btn btn-success" style='background-color: #f7f77e; margin: 0px 0px; width:37px; height:37px;'></button></th>
+    % elif igra.tabela[i][j].mina and igra.tabela[i][j].odkrito:
+        <th><button class="btn btn-success" style='background-color: #024f2e; margin: 0px 0px; width:37px; height:37px;'></button></th>
+    % else:
+        <th><button class="btn btn-success" style='background-color: #c1e0c9; color: #000000; margin: 0px 0px; width:37px; height:37px;' disabled>{{igra.tabela[i][j].stevilka}}</button></th>
+    % end
 
 % else:
-<th><button name='gumb', value='{{igra.id}}-{{j}}-{{i}}', type='submit' class="btn btn-success" style='background-color: #28a745; margin: 0px 0px; width:37px; height:37px;'></button></th>
+    <th><button name='gumb', value='{{igra.id}}-{{j}}-{{i}}', type='submit' class="btn btn-success" style='background-color: #28a745; margin: 0px 0px; width:37px; height:37px;'></button></th>
 % end
 
 % end
@@ -54,13 +56,13 @@
 <script>
 setTimeout(function() {
 window.location.href = "/zmaga/";
-}, 1000);
+}, 1200);
 </script>
 %elif igra.konec:
 <script>
 setTimeout(function() {
 window.location.href = "/poraz/";
-}, 1000);
+}, 1200);
 </script>
 % end
 % end

@@ -37,4 +37,4 @@ def poraz():
     return bottle.template('src/views/poraz.html')
 
 
-bottle.run(debug=True, reloader=True)
+bottle.run(reloader=True)
